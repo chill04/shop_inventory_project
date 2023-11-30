@@ -21,3 +21,6 @@ Prompt D)
     new file: src/main/java/com/example/demo/controllers/AboutController.java;
     -AboutController.java, line 6-11, creates new class AboutController for page links;
 
+Prompt E)
+com/example/demo/bootstrap/BootStrapData.java, lines 42-93, creates 5 new parts
+-BootStrapData.java, lines 117-126, creates 5 new products
