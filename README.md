@@ -22,5 +22,11 @@ Prompt D)
     -AboutController.java, line 6-11, creates new class AboutController for page links;
 
 Prompt E)
-com/example/demo/bootstrap/BootStrapData.java, lines 42-93, creates 5 new parts
--BootStrapData.java, lines 117-126, creates 5 new products
+com/example/demo/bootstrap/BootStrapData.java, lines 42-96, creates 5 new parts;
+-BootStrapData.java, lines 79, creates 'inventoryCheck' boolean set to false;
+-BootStrapData.java, lines 80-82, iterates through parts repository; changes inventoryCheck to true if any are found;
+-BootStrapData.java, lines 108-110, iterates through products repository; changes inventoryCheck to true if any are found;
+-BootStrapData.java, lines 119-130, if inventoryCheck is false, products & parts are added to repositories.  
+
+
+
