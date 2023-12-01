@@ -35,6 +35,33 @@ Prompt F)
     -mainscreen.html, line 86, adds button for 'buy now' to product table;
 
 
+Prompt G)
+com/example/demo/domain/Part.java, lines 31-34, creates minInv and maxInv class variables for Part;
+-Part.java, lines 49-50, adds minInv and maxInv to constructor;
+-Part.java, lines 59-59, adds minInv and maxInv to constructor;
+-Part.java, lines 94-103, creates setter and getter methods for minInv and maxInv;
+-mainscreen.html, lines 38-39, adds table columns for min/max attributes;
+-mainscreen.html, lines 48-49, adds min/max attributes to table;
+
+-BootStrapData.java, lines 49-50, add minimum and maximum to sample inventory part o1;
+-BootStrapData.java, lines 58-59, add minimum and maximum to sample inventory part o2;
+-BootStrapData.java, lines 67-68, add minimum and maximum to sample inventory part o3;
+-BootStrapData.java, lines 76-77, add minimum and maximum to sample inventory part o4;
+-BootStrapData.java, lines 85-86, add minimum and maximum to sample inventory part o5;
+-templates/InhousePartForm.html, lines 25-28, add form fields for minInv and maxInv;
+-templates/OutsourcedPartForm.html, lines 25-28, add form fields for minInv and maxInv;
+
+src/main/resources/application.properties, line 6, renamed storage file as: "spring-boot-h2-db102-RENAMED"
+
+new file: src/main/java/com/example/demo/validators/InventoryMinMaxValidator.java
+new file: src/main/java/com/example/demo/validators/ValidPartsInventory.java
+-part.java, line 4, adds import of ValidPartsInventory;
+-part.java, line 20, adds validation annotation to the Part class;
+
+
+
+
+
 
 
 

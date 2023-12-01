@@ -46,6 +46,8 @@ public class BootStrapData implements CommandLineRunner {
         o1.setInv(2);
         o1.setPrice(25.0);
         o1.setId(400);
+        o1.setMinInv(1);
+        o1.setMaxInv(5);
 
         OutsourcedPart o2= new OutsourcedPart();
         o2.setCompanyName("Western Governors University");
@@ -53,6 +55,8 @@ public class BootStrapData implements CommandLineRunner {
         o2.setInv(2);
         o2.setPrice(2.0);
         o2.setId(401);
+        o2.setMinInv(1);
+        o2.setMaxInv(5);
 
         OutsourcedPart o3= new OutsourcedPart();
         o3.setCompanyName("Western Governors University");
@@ -60,6 +64,8 @@ public class BootStrapData implements CommandLineRunner {
         o3.setInv(2);
         o3.setPrice(2.0);
         o3.setId(402);
+        o3.setMinInv(1);
+        o3.setMaxInv(5);
 
         OutsourcedPart o4= new OutsourcedPart();
         o4.setCompanyName("Western Governors University");
@@ -67,6 +73,8 @@ public class BootStrapData implements CommandLineRunner {
         o4.setInv(5);
         o4.setPrice(9.0);
         o4.setId(403);
+        o4.setMinInv(3);
+        o4.setMaxInv(10);
 
         OutsourcedPart o5= new OutsourcedPart();
         o5.setCompanyName("Western Governors University");
@@ -74,7 +82,8 @@ public class BootStrapData implements CommandLineRunner {
         o5.setInv(5);
         o5.setPrice(5.0);
         o5.setId(404);
-
+        o5.setMinInv(3);
+        o5.setMaxInv(10);
 
         boolean inventoryCheck = false;
         for(OutsourcedPart part:outsourcedParts){
