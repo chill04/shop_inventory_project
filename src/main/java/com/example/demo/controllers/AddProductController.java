@@ -168,4 +168,28 @@ public class AddProductController {
         theModel.addAttribute("availparts",availParts);
         return "productForm";
     }
+    @GetMapping("/buyNow")
+    public String buyNow(@RequestParam("productID") int theId, Model theModel) {
+        ProductService productService = context.getBean(ProductServiceImpl.class);
+        Product theProduct = productService.findById(theId);
+        int inventoryInStock;
+        String cartItem = theProduct.getName();
+        inventoryInStock = theProduct.getInv();
+        String inventoryMessage;
+        if (inventoryInStock < 1) {
+            inventoryMessage = "Purchase failed!<br>" + "0 in-stock inventory for: " + cartItem;
+        } else {
+            int new_inventory = inventoryInStock - 1;
+            theProduct.setInv(inventoryInStock - 1);
+            productService.save(theProduct);
+
+            inventoryMessage = "Purchase successful!<br>There are " + new_inventory + " " + cartItem + "(s) remaining in stock.";
+        }
+
+        theModel.addAttribute("message", inventoryMessage);
+        return "buy_now";
+    }
+
+
+
 }
