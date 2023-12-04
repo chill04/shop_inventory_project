@@ -41,34 +41,34 @@ public class BootStrapData implements CommandLineRunner {
 
 
         OutsourcedPart o1= new OutsourcedPart();
-        o1.setCompanyName("Western Governors University");
+        o1.setCompanyName("Net-Corp");
         o1.setName("Soccer Net");
         o1.setInv(2);
         o1.setPrice(25.0);
         o1.setId(400);
         o1.setMinInv(1);
-        o1.setMaxInv(5);
+        o1.setMaxInv(10);
 
         OutsourcedPart o2= new OutsourcedPart();
-        o2.setCompanyName("Western Governors University");
+        o2.setCompanyName("Nike");
         o2.setName("Replacement Cleats (adult)");
         o2.setInv(2);
         o2.setPrice(2.0);
         o2.setId(401);
         o2.setMinInv(1);
-        o2.setMaxInv(5);
+        o2.setMaxInv(10);
 
         OutsourcedPart o3= new OutsourcedPart();
-        o3.setCompanyName("Western Governors University");
+        o3.setCompanyName("Nike");
         o3.setName("Replacement Cleats (child)");
         o3.setInv(2);
         o3.setPrice(2.0);
         o3.setId(402);
         o3.setMinInv(1);
-        o3.setMaxInv(5);
+        o3.setMaxInv(10);
 
         OutsourcedPart o4= new OutsourcedPart();
-        o4.setCompanyName("Western Governors University");
+        o4.setCompanyName("Cone Corp");
         o4.setName("Cones (4 pack)");
         o4.setInv(5);
         o4.setPrice(9.0);
@@ -77,8 +77,8 @@ public class BootStrapData implements CommandLineRunner {
         o4.setMaxInv(10);
 
         OutsourcedPart o5= new OutsourcedPart();
-        o5.setCompanyName("Western Governors University");
-        o5.setName("Water Bottle");
+        o5.setCompanyName("FIFA");
+        o5.setName("Soccer Ball");
         o5.setInv(5);
         o5.setPrice(5.0);
         o5.setId(404);
