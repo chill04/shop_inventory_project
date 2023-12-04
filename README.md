@@ -5,12 +5,12 @@
 
 
 
-Prompt C)
+## Prompt C)
     src/main/resources/templates/mainscreen.html, line 14, changes title to "My Soccer Shop";
     -mainscreen.html, line 19, changes header to "Soccer Shop";
 
 
-Prompt D)
+## Prompt D)
     new file: src/main/resources/templates/about.html;
     -mainscreen.html, line 91, adds link to "About Us" page;
     -about.html, line 5, adds "About Us" title
@@ -21,21 +21,21 @@ Prompt D)
     new file: src/main/java/com/example/demo/controllers/AboutController.java;
     -AboutController.java, line 6-11, creates new class AboutController for page links;
 
-Prompt E)
+## Prompt E)
     com/example/demo/bootstrap/BootStrapData.java, lines 42-96, creates 5 new parts;
     -BootStrapData.java, lines 79, creates 'inventoryCheck' boolean set to false;
     -BootStrapData.java, lines 80-82, iterates through parts repository; changes inventoryCheck to true if any are found;
     -BootStrapData.java, lines 108-110, iterates through products repository; changes inventoryCheck to true if any are found;
     -BootStrapData.java, lines 119-130, if inventoryCheck is false, products & parts are added to repositories.  
 
-Prompt F)
+## Prompt F)
     new file: src/main/resources/templates/buy-now.html;
     -controllers/AddProductController.java, line 171-191, creates new controller and method for buy-now . Checks product inventory and if zero, creates failure message.  If >0, creates success message and reduces item inventory by 1.
     -buy-now.html, line 9, creates display for success/failure message from controller;
     -mainscreen.html, line 86, adds button for 'buy now' to product table;
 
 
-Prompt G)
+## Prompt G)
 com/example/demo/domain/Part.java, lines 31-34, creates minInv and maxInv class variables for Part;
 -Part.java, lines 49-50, adds minInv and maxInv to constructor;
 -Part.java, lines 59-59, adds minInv and maxInv to constructor;
@@ -59,7 +59,16 @@ new file: src/main/java/com/example/demo/validators/ValidPartsInventory.java
 -part.java, line 20, adds validation annotation to the Part class;
 
 
+## PROMPT H)
+OutSourcedPartForm.HTML, line 22, changes field error to show class errors instead of just from the inv field;
+InhousePartForm.HTML, line 22, changes field error to show class errors instead of just from the inv field;
+InventoryMinMaxValidator.java, line 17-19, converts attributes inv,minInv,maxInv to Integer for logical tests;
+InventoryMinMaxValidator.java, line 20-21, creates various error messages for inventory minimum and inventory maximum warnings;
+InventoryMinMaxValidator.java, line 22-40, test if inventory drops below minimum or exceeds maximum, and assigns error message;
+EnufPartsValidator.java; line 36, changes required part inventory test to minumum inventory, to prevent new products from reducing inventory below required level.
 
+BootStrapData.java, lines 44, 53, 62, 71, 80; changes company name of parts to be more realistic.
+BootStrapData.java, line 81, creates "soccer ball" as an available part.
 
 
 

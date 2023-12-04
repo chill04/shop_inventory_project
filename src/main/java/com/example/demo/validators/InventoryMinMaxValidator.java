@@ -1,5 +1,6 @@
 package com.example.demo.validators;
 import com.example.demo.domain.Part;
+import com.example.demo.validators.ValidPartsInventory;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
@@ -13,10 +14,29 @@ public class InventoryMinMaxValidator implements ConstraintValidator<ValidPartsI
         if(part == null){
             return true;
         }
-        int inventory = part.getInv();
-        int minInventory = part.getMinInv();
-        int maxInventory = part.getMaxInv();
+        Integer inventory = part.getInv();
+        Integer minInventory = part.getMinInv();
+        Integer maxInventory = part.getMaxInv();
+        String minMessage = "Inventory must be greater than or equal to Minimum Inventory";
+        String maxMessage = "Inventory must be less than or equal to Maximum Inventory";
+        boolean isValid = true;
 
-        return inventory >= minInventory && inventory <= maxInventory;
+        if (inventory != null && minInventory != null && inventory < minInventory) {
+            isValid = false;
+            constraintValidatorContext.disableDefaultConstraintViolation();
+            constraintValidatorContext.buildConstraintViolationWithTemplate(minMessage)
+                    .addPropertyNode("inv")
+                    .addConstraintViolation();
+        }
+
+        if (inventory != null && maxInventory != null && inventory > maxInventory) {
+            isValid = false;
+            constraintValidatorContext.disableDefaultConstraintViolation();
+            constraintValidatorContext.buildConstraintViolationWithTemplate(maxMessage)
+                    .addPropertyNode("inv")
+                    .addConstraintViolation();
+        }
+
+        return isValid;
     }
 }

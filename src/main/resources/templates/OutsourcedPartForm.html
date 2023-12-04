@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Part Form</title>
@@ -20,7 +19,7 @@
     <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</p>
 
 <p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
-    <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
+    <p data-th-each="err : ${#fields.allErrors()}" data-th-text="${err}" class="error">Invalid input.</p>
 
     <p><input type="text" th:field="*{companyName}" placeholder="Company Name" class="form-control mb-4 col-4"/></p>
 <p><input type="text" th:field="*{minInv}" placeholder="Minimum inventory" class="form-control mb-4 col-4"/></p>
