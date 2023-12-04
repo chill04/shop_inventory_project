@@ -70,7 +70,9 @@ EnufPartsValidator.java; line 36, changes required part inventory test to minumu
 BootStrapData.java, lines 44, 53, 62, 71, 80; changes company name of parts to be more realistic.
 BootStrapData.java, line 81, creates "soccer ball" as an available part.
 
-
+## Prompt I)
+src/test/java/com/example/demo/domain/PartTest.java, lines 153-160, creates test unit for minimum inventory field.
+src/test/java/com/example/demo/domain/PartTest.java, lines 161-168, creates test unit for maximum inventory field.
 
 
 
