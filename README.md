@@ -75,4 +75,5 @@ src/test/java/com/example/demo/domain/PartTest.java, lines 153-160, creates test
 src/test/java/com/example/demo/domain/PartTest.java, lines 161-168, creates test unit for maximum inventory field.
 
 
-
+## Prompt J)
+DeletePartValidator.java, file deleted because validator is unused;
