@@ -8,6 +8,7 @@
 ## Prompt C)
     src/main/resources/templates/mainscreen.html, line 14, changes title to "My Soccer Shop";
     -mainscreen.html, line 19, changes header to "Soccer Shop";
+    -mainscreen.html, line 21-22, adds static lists of parts and products;
 
 
 ## Prompt D)
