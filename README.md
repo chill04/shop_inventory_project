@@ -1,17 +1,12 @@
-<strong>** DO NOT DISTRIBUTE OR PUBLICLY POST SOLUTIONS TO THESE LABS. MAKE ALL FORKS OF THIS REPOSITORY WITH SOLUTION CODE PRIVATE. PLEASE REFER TO THE STUDENT CODE OF CONDUCT AND ETHICAL EXPECTATIONS FOR COLLEGE OF INFORMATION TECHNOLOGY STUDENTS FOR SPECIFICS. ** </strong>
+School project to customize a Spring Framework application with an HTML front-end and a Java backend for a retailer's inventory management system.
 
-# WESTERN GOVERNOR UNIVERSITY 
-## D287 – JAVA FRAMEWORKS
-
-
-
-## Prompt C)
+## Step 1)
     src/main/resources/templates/mainscreen.html, line 14, changes title to "My Soccer Shop";
     -mainscreen.html, line 19, changes header to "Soccer Shop";
     -mainscreen.html, line 21-22, adds static lists of parts and products;
 
 
-## Prompt D)
+## Step 2)
     new file: src/main/resources/templates/about.html;
     -mainscreen.html, line 91, adds link to "About Us" page;
     -about.html, line 5, adds "About Us" title
@@ -22,21 +17,21 @@
     new file: src/main/java/com/example/demo/controllers/AboutController.java;
     -AboutController.java, line 6-11, creates new class AboutController for page links;
 
-## Prompt E)
+## Step 3)
     com/example/demo/bootstrap/BootStrapData.java, lines 42-96, creates 5 new parts;
     -BootStrapData.java, lines 79, creates 'inventoryCheck' boolean set to false;
     -BootStrapData.java, lines 80-82, iterates through parts repository; changes inventoryCheck to true if any are found;
     -BootStrapData.java, lines 108-110, iterates through products repository; changes inventoryCheck to true if any are found;
     -BootStrapData.java, lines 119-130, if inventoryCheck is false, products & parts are added to repositories.  
 
-## Prompt F)
+## Step 4)
     new file: src/main/resources/templates/buy-now.html;
     -controllers/AddProductController.java, line 171-191, creates new controller and method for buy-now . Checks product inventory and if zero, creates failure message.  If >0, creates success message and reduces item inventory by 1.
     -buy-now.html, line 9, creates display for success/failure message from controller;
     -mainscreen.html, line 86, adds button for 'buy now' to product table;
 
 
-## Prompt G)
+## Step 5)
 com/example/demo/domain/Part.java, lines 31-34, creates minInv and maxInv class variables for Part;
 -Part.java, lines 49-50, adds minInv and maxInv to constructor;
 -Part.java, lines 59-59, adds minInv and maxInv to constructor;
@@ -60,7 +55,7 @@ new file: src/main/java/com/example/demo/validators/ValidPartsInventory.java
 -part.java, line 20, adds validation annotation to the Part class;
 
 
-## PROMPT H)
+## Step 6)
 OutSourcedPartForm.HTML, line 22, changes field error to show class errors instead of just from the inv field;
 InhousePartForm.HTML, line 22, changes field error to show class errors instead of just from the inv field;
 InventoryMinMaxValidator.java, line 17-19, converts attributes inv,minInv,maxInv to Integer for logical tests;
@@ -71,10 +66,10 @@ EnufPartsValidator.java; line 36, changes required part inventory test to minumu
 BootStrapData.java, lines 44, 53, 62, 71, 80; changes company name of parts to be more realistic.
 BootStrapData.java, line 81, creates "soccer ball" as an available part.
 
-## Prompt I)
+## Step 7)
 src/test/java/com/example/demo/domain/PartTest.java, lines 153-160, creates test unit for minimum inventory field.
 src/test/java/com/example/demo/domain/PartTest.java, lines 161-168, creates test unit for maximum inventory field.
 
 
-## Prompt J)
+## Step 8)
 DeletePartValidator.java, file deleted because validator is unused;
