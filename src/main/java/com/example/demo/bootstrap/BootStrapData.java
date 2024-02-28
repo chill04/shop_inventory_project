@@ -24,7 +24,6 @@ import java.util.Optional;
  */
 @Component
 public class BootStrapData implements CommandLineRunner {
-
     private final PartRepository partRepository;
     private final ProductRepository productRepository;
 
@@ -38,6 +37,59 @@ public class BootStrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        List<OutsourcedPart> outsourcedParts = (List<OutsourcedPart>) outsourcedPartRepository.findAll();
+
+
+        OutsourcedPart o1= new OutsourcedPart();
+        o1.setCompanyName("Net-Corp");
+        o1.setName("Soccer Net");
+        o1.setInv(2);
+        o1.setPrice(25.0);
+        o1.setId(400);
+        o1.setMinInv(1);
+        o1.setMaxInv(10);
+
+        OutsourcedPart o2= new OutsourcedPart();
+        o2.setCompanyName("Nike");
+        o2.setName("Replacement Cleats (adult)");
+        o2.setInv(2);
+        o2.setPrice(2.0);
+        o2.setId(401);
+        o2.setMinInv(1);
+        o2.setMaxInv(10);
+
+        OutsourcedPart o3= new OutsourcedPart();
+        o3.setCompanyName("Nike");
+        o3.setName("Replacement Cleats (child)");
+        o3.setInv(2);
+        o3.setPrice(2.0);
+        o3.setId(402);
+        o3.setMinInv(1);
+        o3.setMaxInv(10);
+
+        OutsourcedPart o4= new OutsourcedPart();
+        o4.setCompanyName("Cone Corp");
+        o4.setName("Cones (4 pack)");
+        o4.setInv(5);
+        o4.setPrice(9.0);
+        o4.setId(403);
+        o4.setMinInv(3);
+        o4.setMaxInv(10);
+
+        OutsourcedPart o5= new OutsourcedPart();
+        o5.setCompanyName("FIFA");
+        o5.setName("Soccer Ball");
+        o5.setInv(5);
+        o5.setPrice(5.0);
+        o5.setId(404);
+        o5.setMinInv(3);
+        o5.setMaxInv(10);
+
+        boolean inventoryCheck = false;
+        for(OutsourcedPart part:outsourcedParts){
+                inventoryCheck = true;
+        }
+
 
        /*
         OutsourcedPart o= new OutsourcedPart();
@@ -55,9 +107,35 @@ public class BootStrapData implements CommandLineRunner {
 
         System.out.println(thePart.getCompanyName());
         */
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
+
+
         for(OutsourcedPart part:outsourcedParts){
             System.out.println(part.getName()+" "+part.getCompanyName());
+        }
+        List<Product> myProducts = (List<Product>) productRepository.findAll();
+
+        for (Product product : myProducts) {
+            inventoryCheck = true;
+        }
+
+        Product childSoccerSet= new Product("Child-sized soccer set",10.0,5);
+        Product adultSoccerSet= new Product("Adult-sized soccer set",15.0,10);
+        Product replacementPartsSet= new Product("Soccer Set: replacement parts",20.0,2);
+        Product familySoccerSet= new Product("Soccer Set: Family Size",10.0,5);
+        Product partySoccerSet= new Product("Soccer Set: Party Size",15.0,5);
+
+
+        if(!(inventoryCheck)) {
+            outsourcedPartRepository.save(o1);
+            outsourcedPartRepository.save(o2);
+            outsourcedPartRepository.save(o3);
+            outsourcedPartRepository.save(o4);
+            outsourcedPartRepository.save(o5);
+            productRepository.save(childSoccerSet);
+            productRepository.save(adultSoccerSet);
+            productRepository.save(replacementPartsSet);
+            productRepository.save(familySoccerSet);
+            productRepository.save(partySoccerSet);
         }
 
         /*

@@ -2,25 +2,79 @@
 
 # WESTERN GOVERNOR UNIVERSITY 
 ## D287 – JAVA FRAMEWORKS
-Welcome to Java Frameworks! This is an opportunity for students to implement user interfaces and learn to leverage existing frameworks, assets, and content for object-oriented programming.
-FOR SPECIFIC TASK INSTRUCTIONS AND REQUIREMENTS FOR THIS ASSESSMENT, PLEASE REFER TO THE COURSE PAGE.
-## BASIC INSTRUCTIONS
-For this project, you will use the Integrated Development Environment (IDE) link in the web links section of this assessment to install the IDE, IntelliJ IDEA (Ultimate Edition). All relevant links are on the course page. Please refer to the course of study for specific links. You will sign up for a free student license using your WGU.edu email address. Please see the “IntelliJ Ultimate Edition Instructions” attachment for instructions on how do this. Next you will download the “Inventory Management Application Template Code” provided in the web links section and open it in IntelliJ IDEA (Ultimate Edition). You will upload this project to a private external GitLab repository and backup regularly. As a part of this, you have been provided with a base code (starting point). 
 
-## SUPPLEMENTAL RESOURCES  
-1.	How to clone a project to IntelliJ using Git?
 
-> Ensure that you have Git installed on your system and that IntelliJ is installed using [Toolbox](https://www.jetbrains.com/toolbox-app/). Make sure that you are using version 2022.3.2. Once this has been confirmed, click the clone button and use the 'IntelliJ IDEA (HTTPS)' button. This will open IntelliJ with a prompt to clone the proejct. Save it in a safe location for the directory and press clone. IntelliJ will prompt you for your credentials. Enter in your WGU Credentials and the project will be cloned onto your local machine.  
 
-2. How to create a branch and start Development?
+## Prompt C)
+    src/main/resources/templates/mainscreen.html, line 14, changes title to "My Soccer Shop";
+    -mainscreen.html, line 19, changes header to "Soccer Shop";
+    -mainscreen.html, line 21-22, adds static lists of parts and products;
 
-- GitLab method
-> Press the '+' button located near your branch name. In the dropdown list, press the 'New branch' button. This will allow you to create a name for your branch. Once the branch has been named, you can select 'Create Branch' to push the branch to your repository.
 
-- IntelliJ method
-> In IntelliJ, Go to the 'Git' button on the top toolbar. Select the new branch option and create a name for the branch. Make sure checkout branch is selected and press create. You can now add a commit message and push the new branch to the local repo.
+## Prompt D)
+    new file: src/main/resources/templates/about.html;
+    -mainscreen.html, line 91, adds link to "About Us" page;
+    -about.html, line 5, adds "About Us" title
+    -about.html, line 8, adds "About Us" header
+    -about.html, line 9, adds description of business
+    -about.html, line 10, adds linebreak
+    -about.html, line 11, adds return link to mainscreen;
+    new file: src/main/java/com/example/demo/controllers/AboutController.java;
+    -AboutController.java, line 6-11, creates new class AboutController for page links;
 
-## SUPPORT
-If you need additional support, please navigate to the course page and reach out to your course instructor.
-## FUTURE USE
-Take this opportunity to create or add to a simple resume portfolio to highlight and showcase your work for future use in career search, experience, and education!
+## Prompt E)
+    com/example/demo/bootstrap/BootStrapData.java, lines 42-96, creates 5 new parts;
+    -BootStrapData.java, lines 79, creates 'inventoryCheck' boolean set to false;
+    -BootStrapData.java, lines 80-82, iterates through parts repository; changes inventoryCheck to true if any are found;
+    -BootStrapData.java, lines 108-110, iterates through products repository; changes inventoryCheck to true if any are found;
+    -BootStrapData.java, lines 119-130, if inventoryCheck is false, products & parts are added to repositories.  
+
+## Prompt F)
+    new file: src/main/resources/templates/buy-now.html;
+    -controllers/AddProductController.java, line 171-191, creates new controller and method for buy-now . Checks product inventory and if zero, creates failure message.  If >0, creates success message and reduces item inventory by 1.
+    -buy-now.html, line 9, creates display for success/failure message from controller;
+    -mainscreen.html, line 86, adds button for 'buy now' to product table;
+
+
+## Prompt G)
+com/example/demo/domain/Part.java, lines 31-34, creates minInv and maxInv class variables for Part;
+-Part.java, lines 49-50, adds minInv and maxInv to constructor;
+-Part.java, lines 59-59, adds minInv and maxInv to constructor;
+-Part.java, lines 94-103, creates setter and getter methods for minInv and maxInv;
+-mainscreen.html, lines 38-39, adds table columns for min/max attributes;
+-mainscreen.html, lines 48-49, adds min/max attributes to table;
+
+-BootStrapData.java, lines 49-50, add minimum and maximum to sample inventory part o1;
+-BootStrapData.java, lines 58-59, add minimum and maximum to sample inventory part o2;
+-BootStrapData.java, lines 67-68, add minimum and maximum to sample inventory part o3;
+-BootStrapData.java, lines 76-77, add minimum and maximum to sample inventory part o4;
+-BootStrapData.java, lines 85-86, add minimum and maximum to sample inventory part o5;
+-templates/InhousePartForm.html, lines 25-28, add form fields for minInv and maxInv;
+-templates/OutsourcedPartForm.html, lines 25-28, add form fields for minInv and maxInv;
+
+src/main/resources/application.properties, line 6, renamed storage file as: "spring-boot-h2-db102-RENAMED"
+
+new file: src/main/java/com/example/demo/validators/InventoryMinMaxValidator.java
+new file: src/main/java/com/example/demo/validators/ValidPartsInventory.java
+-part.java, line 4, adds import of ValidPartsInventory;
+-part.java, line 20, adds validation annotation to the Part class;
+
+
+## PROMPT H)
+OutSourcedPartForm.HTML, line 22, changes field error to show class errors instead of just from the inv field;
+InhousePartForm.HTML, line 22, changes field error to show class errors instead of just from the inv field;
+InventoryMinMaxValidator.java, line 17-19, converts attributes inv,minInv,maxInv to Integer for logical tests;
+InventoryMinMaxValidator.java, line 20-21, creates various error messages for inventory minimum and inventory maximum warnings;
+InventoryMinMaxValidator.java, line 22-40, test if inventory drops below minimum or exceeds maximum, and assigns error message;
+EnufPartsValidator.java; line 36, changes required part inventory test to minumum inventory, to prevent new products from reducing inventory below required level.
+
+BootStrapData.java, lines 44, 53, 62, 71, 80; changes company name of parts to be more realistic.
+BootStrapData.java, line 81, creates "soccer ball" as an available part.
+
+## Prompt I)
+src/test/java/com/example/demo/domain/PartTest.java, lines 153-160, creates test unit for minimum inventory field.
+src/test/java/com/example/demo/domain/PartTest.java, lines 161-168, creates test unit for maximum inventory field.
+
+
+## Prompt J)
+DeletePartValidator.java, file deleted because validator is unused;
